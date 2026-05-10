@@ -1,0 +1,88 @@
+name: Deploy Lambda
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "lambda/**"
+      - ".github/workflows/deploy-lambda.yml"
+  workflow_dispatch:
+
+env:
+  LAMBDA_FUNCTION_NAME: ebook-delivery
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  deploy:
+    name: Package & Deploy to AWS Lambda
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. 소스 체크아웃 ────────────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. Python 환경 ────────────────────────────────────────────────────────
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: lambda/requirements.txt
+
+      # ── 3. 의존성 설치 (Lambda 런타임 디렉터리에) ────────────────────────────
+      - name: Install dependencies
+        run: |
+          pip install \
+            --quiet \
+            --target lambda/package \
+            -r lambda/requirements.txt
+
+      # ── 4. ZIP 패키징 ─────────────────────────────────────────────────────────
+      - name: Build deployment package
+        run: |
+          cp lambda/lambda_function.py lambda/package/
+          cd lambda/package
+          zip -r ../deployment.zip . -q
+          echo "패키지 크기: $(du -sh ../deployment.zip | cut -f1)"
+
+      # ── 5. AWS 자격 증명 ─────────────────────────────────────────────────────
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # ── 6. Lambda 코드 업데이트 ───────────────────────────────────────────────
+      - name: Update Lambda function code
+        run: |
+          aws lambda update-function-code \
+            --function-name ${{ env.LAMBDA_FUNCTION_NAME }} \
+            --zip-file fileb://lambda/deployment.zip \
+            --no-cli-pager
+
+      # ── 7. 배포 완료 대기 ────────────────────────────────────────────────────
+      - name: Wait for update to complete
+        run: |
+          aws lambda wait function-updated \
+            --function-name ${{ env.LAMBDA_FUNCTION_NAME }}
+          echo "Lambda 배포 완료!"
+
+      # ── 8. 환경변수 동기화 (선택 - secrets 변경 시에만 적용) ─────────────────
+      - name: Sync Lambda environment variables
+        run: |
+          aws lambda update-function-configuration \
+            --function-name ${{ env.LAMBDA_FUNCTION_NAME }} \
+            --environment "Variables={
+              GMAIL_USER=${{ secrets.GMAIL_USER }},
+              GMAIL_APP_PASSWORD=${{ secrets.GMAIL_APP_PASSWORD }},
+              GITHUB_TOKEN=${{ secrets.EBOOK_GITHUB_TOKEN }},
+              GITHUB_REPO_OWNER=${{ secrets.GITHUB_REPO_OWNER }},
+              GITHUB_REPO_NAME=${{ secrets.GITHUB_REPO_NAME }},
+              CAFE24_SECRET=${{ secrets.CAFE24_SECRET }},
+              PRODUCT_PDF_MAP=${{ secrets.PRODUCT_PDF_MAP }},
+              SHOP_NAME=${{ secrets.SHOP_NAME }}
+            }" \
+            --no-cli-pager
