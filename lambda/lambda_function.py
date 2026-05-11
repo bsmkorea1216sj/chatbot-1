@@ -105,6 +105,20 @@ def parse_order(payload: dict) -> dict:
 # ─── Lambda 핸들러 ──────────────────────────────────────────────────────────────
 
 def lambda_handler(event, context):
+    # GET 요청 → 서비스 상태 확인용 응답
+    http_method = event.get("requestContext", {}).get("http", {}).get("method", "POST")
+    if http_method == "GET":
+        shop_name = os.environ.get("SHOP_NAME", "전자책 쇼핑몰")
+        return {
+            "statusCode": 200,
+            "headers": {"Content-Type": "text/html; charset=utf-8"},
+            "body": (
+                f"<h2>✅ {shop_name} 자동발송 서버 가동 중</h2>"
+                f"<p>웹훅 URL이 정상적으로 연결되어 있습니다.</p>"
+                f"<p>카페24 주문 완료 시 자동으로 전자책이 발송됩니다.</p>"
+            ),
+        }
+
     # 1. 바디 추출 (API Gateway 프록시 통합)
     raw_body: str = event.get("body") or "{}"
     if event.get("isBase64Encoded"):
