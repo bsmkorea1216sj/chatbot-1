@@ -102,12 +102,12 @@ export const curriculum: WeekCurriculum[] = [
         title: 'Claude Code 개요 및 환경 세팅',
         hasContent: true,
         markdownPath: '/content/week2/2-5-claude-code-setup.md',
-        description: 'Claude Chat과 Code의 차이, 웹앱 구조, 요금제, 설치와 첫 명령',
-        awsServices: ['Claude Code', 'VS Code', 'Node.js'],
+        description: 'Claude Chat과 Code의 차이, 웹앱 구조, 요금제, 데스크톱 앱 Code 탭에서 첫 지시',
+        awsServices: ['Claude Code', 'Claude 데스크톱 앱'],
         learningObjectives: [
           'Claude Chat과 Claude Code의 차이를 설명할 수 있습니다.',
           '웹앱의 구조(화면·로직·데이터)를 식당 비유로 설명할 수 있습니다.',
-          'VS Code와 Node.js를 준비하고 Claude Code를 실행할 수 있습니다.',
+          'Claude 데스크톱 앱의 Code 탭에서 작업 폴더를 고르고 첫 지시를 내릴 수 있습니다.',
         ],
       },
       {
