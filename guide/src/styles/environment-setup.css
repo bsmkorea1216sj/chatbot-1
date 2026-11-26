@@ -1,0 +1,112 @@
+/* 환경 설정 페이지 */
+
+.environment-setup-page {
+    min-height: 100vh;
+}
+
+/* ============================================
+   섹션 제목 스타일
+   ============================================ */
+
+.section-title {
+    font-weight: 600;
+}
+
+/* ============================================
+   탭 내용 텍스트 크기 표준화
+   ============================================ */
+
+/* 탭 내용 텍스트 - 명확한 클래스 사용 */
+.tab-content-text {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   스타일 불릿 리스트
+   ============================================ */
+
+.styled-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.styled-list-item>span:first-child {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: #0972d3;
+}
+
+[data-awsui-theme='dark'] .styled-list-item>span:first-child {
+    color: #539fe5;
+}
+
+/* ============================================
+   반응형 디자인
+   ============================================ */
+
+@media (max-width: 768px) {
+    .environment-setup-page {
+        padding: 0;
+    }
+}
+
+/* ============================================
+   2열 레이아웃 카드 스타일
+   ============================================ */
+
+.column-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+}
+
+.column-card--blue {
+    background-color: #f0f7ff;
+    border-color: #d0e3f7;
+}
+
+.column-card--amber {
+    background-color: #fff8f0;
+    border-color: #f7e3d0;
+}
+
+.column-card--green {
+    background-color: #f0faf5;
+    border-color: #d0f0e0;
+}
+
+.column-card--purple {
+    background-color: #f5f0ff;
+    border-color: #e0d0f7;
+}
+
+[data-awsui-theme='dark'] .column-card {
+    background-color: #1a1f2e;
+    border-color: #2a3040;
+}
+
+[data-awsui-theme='dark'] .column-card--blue {
+    background-color: #0d1b2a;
+    border-color: #1a3050;
+}
+
+[data-awsui-theme='dark'] .column-card--amber {
+    background-color: #2a1f0d;
+    border-color: #50381a;
+}
+
+[data-awsui-theme='dark'] .column-card--green {
+    background-color: #0d2a1a;
+    border-color: #1a5038;
+}
+
+[data-awsui-theme='dark'] .column-card--purple {
+    background-color: #1a0d2a;
+    border-color: #381a50;
+}

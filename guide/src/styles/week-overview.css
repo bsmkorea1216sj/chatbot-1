@@ -1,0 +1,17 @@
+/* Week Overview 페이지 스타일 */
+
+.session-item {
+  border: 1px solid var(--color-border-divider-default);
+  border-radius: 8px;
+  background-color: var(--color-background-container-content);
+  transition: all 0.2s ease;
+}
+
+.session-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-border-item-selected);
+}
+
+[data-awsui-theme='dark'] .session-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}

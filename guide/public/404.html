@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리다이렉트 중...</title>
+    <script>
+      // GitHub Pages SPA 리다이렉트 트릭
+      // 현재 경로를 쿼리 파라미터로 변환하여 index.html로 리다이렉트
+      (function () {
+        var pathSegmentsToKeep = 1; // /cloud_architect/ 유지
+
+        var l = window.location;
+        var path =
+          l.pathname
+            .split('/')
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join('/') + '/';
+        var route = l.pathname.slice(path.length - 1);
+
+        // 쿼리 파라미터로 경로 전달
+        l.replace(
+          l.protocol +
+            '//' +
+            l.hostname +
+            (l.port ? ':' + l.port : '') +
+            path +
+            '?p=' +
+            route +
+            (l.search ? '&' + l.search.slice(1) : '') +
+            l.hash,
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- 리다이렉트 중... -->
+  </body>
+</html>

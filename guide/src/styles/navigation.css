@@ -1,0 +1,69 @@
+/* 사이드 네비게이션 너비 조정 - 왼쪽만 적용 */
+
+/* 네비게이션 폰트 설정 - 프리텐다드 적용 */
+[data-testid="side-navigation"],
+.awsui-side-navigation,
+div[class*="awsui"][class*="drawer"][class*="navigation"] {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+/* 네비게이션 링크 텍스트 - 폰트 크기 조정 */
+.awsui-side-navigation a,
+.awsui-side-navigation span,
+[class*="awsui_link-text"] {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
+    font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
+}
+
+/* 네비게이션 섹션 헤더 */
+[class*="awsui_header"] {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+}
+
+/* 왼쪽 네비게이션 drawer만 선택 */
+div[class*="awsui"][class*="drawer"][class*="navigation"]:not([class*="drawer-closed"]) {
+    width: 400px !important;
+    min-width: 400px !important;
+    max-width: 400px !important;
+}
+
+/* 왼쪽 네비게이션 내부 */
+div[class*="awsui"][class*="drawer"][class*="navigation"]>* {
+    width: 100% !important;
+    max-width: 400px !important;
+}
+
+/* SideNavigation 컴포넌트 */
+[data-testid="side-navigation"],
+.awsui-side-navigation {
+    width: 400px !important;
+    max-width: 400px !important;
+}
+
+/* 오른쪽 도구 패널은 기본값 유지 */
+div[class*="awsui"][class*="drawer"][class*="tools"] {
+    width: auto !important;
+    min-width: auto !important;
+    max-width: none !important;
+}
+
+/* 모바일 대응 */
+@media (max-width: 767px) {
+    div[class*="awsui"][class*="drawer"][class*="navigation"]:not([class*="drawer-closed"]) {
+        width: 320px !important;
+        min-width: 320px !important;
+        max-width: 320px !important;
+    }
+
+    div[class*="awsui"][class*="drawer"][class*="navigation"]>* {
+        max-width: 320px !important;
+    }
+
+    [data-testid="side-navigation"],
+    .awsui-side-navigation {
+        width: 320px !important;
+        max-width: 320px !important;
+    }
+}

@@ -1,0 +1,407 @@
+/* App 레이아웃 스타일 - 미니멀 디자인 */
+
+/* CloudScape 레이아웃/네비게이션 직각 유지 */
+[class*='awsui_layout'],
+[class*='awsui_navigation'],
+[class*='awsui_tools'] {
+  border-radius: 0 !important;
+}
+
+/* 헤더 전체 컨테이너 - 항상 sticky */
+.app-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 !important;
+}
+
+/* TopNavigation 스타일 */
+.app-layout-top-nav {
+  background-color: #0f172a !important;
+  border-bottom: 1px solid #2d3748;
+  margin: 0;
+  position: relative;
+  z-index: 1001;
+  min-height: 48px;
+}
+
+[data-awsui-theme='dark'] .app-layout-top-nav {
+  background-color: #020617 !important;
+  border-bottom-color: #1e293b;
+}
+
+/* 데스크톱 사이드바 토글 버튼 */
+.desktop-nav-toggle {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1002;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.desktop-nav-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 데스크톱 토글 버튼이 있을 때 identity 왼쪽 여백 확보 */
+@media (min-width: 689px) {
+  .app-layout-top-nav [class*='awsui_identity'] {
+    margin-left: 16px !important;
+  }
+}
+
+/* 모바일 Breadcrumb 헤더 */
+.mobile-breadcrumb-header {
+  background: #0f172a !important;
+  border-bottom: 1px solid #2d3748;
+  padding: 8px 16px;
+  margin: 0 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+[data-awsui-theme='dark'] .mobile-breadcrumb-header {
+  background: #020617 !important;
+  border-bottom-color: #1e293b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* CloudScape AppLayout 컨테이너의 여백 제거 */
+@media (max-width: 688px) {
+
+  /* AppLayout의 main 영역 */
+  [class*='awsui'][class*='layout'] {
+    padding-top: 0 !important;
+  }
+
+  /* content wrapper */
+  [class*='awsui'][class*='content-wrapper'] {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* content 영역 */
+  [class*='awsui'][class*='content'] {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* Breadcrumb 텍스트 말줄임 */
+.mobile-breadcrumb-header [class*='breadcrumb']:last-child {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* CloudScape의 모바일 헤더 완전히 숨김 */
+[class*='awsui'][class*='mobile-bar'] {
+  display: none !important;
+}
+
+/* Breadcrumb 영역 스타일 */
+[class*='awsui_breadcrumbs'] {
+  background-color: var(--color-background-container-header) !important;
+  border-bottom: 1px solid var(--color-border-divider-default) !important;
+  padding: 12px 20px !important;
+  margin: 0 !important;
+}
+
+[data-awsui-theme='dark'] [class*='awsui_breadcrumbs'] {
+  background-color: var(--color-background-container-header) !important;
+}
+
+/* 모바일 Breadcrumb 컨테이너 */
+.mobile-breadcrumb-container {
+  background-color: var(--color-background-container-header);
+  border-bottom: 1px solid var(--color-border-divider-default);
+  padding: 8px 16px;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+[data-awsui-theme='dark'] .mobile-breadcrumb-container {
+  background-color: var(--color-background-container-header);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* CloudScape content 영역에서 sticky 작동하도록 */
+@media (max-width: 688px) {
+  [class*='awsui'][class*='content-wrapper'] {
+    position: relative;
+  }
+
+  .mobile-breadcrumb-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+
+/* Breadcrumb 텍스트 말줄임 */
+.mobile-breadcrumb-container [class*='breadcrumb-group'] {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mobile-breadcrumb-container [class*='breadcrumb']:last-child {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* 모바일에서 햄버거 버튼을 왼쪽으로 이동 */
+@media (max-width: 688px) {
+  .app-layout-top-nav {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  [data-awsui-theme='dark'] .app-layout-top-nav {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* identity 영역 숨김 */
+  [class*='awsui_identity'] {
+    display: none !important;
+  }
+
+  /* utilities 컨테이너를 전체 너비로 */
+  [class*='awsui_utilities'] {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-left: 0 !important;
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+    gap: 0 !important;
+  }
+
+  /* 모든 utility 버튼 강제 표시 */
+  [class*='awsui_utilities']>* {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 첫 번째 버튼(햄버거)은 왼쪽 */
+  [class*='awsui_utilities']>*:first-child {
+    order: 1 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* 두 번째 버튼(한양대 클라우드)은 중앙 */
+  [class*='awsui_utilities']>*:nth-child(2) {
+    order: 2 !important;
+    flex: 1 !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* 세 번째 버튼(목차)은 오른쪽, 간격 최소화 */
+  [class*='awsui_utilities']>*:nth-child(3) {
+    order: 3 !important;
+    margin-left: 4px !important;
+  }
+
+  /* 네 번째 버튼(다크모드)은 오른쪽, 간격 최소화 */
+  [class*='awsui_utilities']>*:nth-child(4) {
+    order: 4 !important;
+    margin-left: 4px !important;
+  }
+}
+
+/* 500px 이하: 별도의 모바일 헤더 */
+.very-small-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a !important;
+  border-bottom: 1px solid #2d3748;
+  padding: 0 8px;
+  height: 48px;
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1001;
+}
+
+[data-awsui-theme='dark'] .very-small-mobile-header {
+  background-color: #020617 !important;
+  border-bottom-color: #1e293b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-icon-button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 12px;
+  cursor: pointer;
+  color: #cbd5e1;
+  transition: all 0.15s ease;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 48px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.mobile-icon {
+  font-size: 20px;
+  line-height: 1;
+  display: block;
+}
+
+/* 목차 아이콘 - 동그라미 안에 i */
+.mobile-icon--info {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+[data-awsui-theme='dark'] .mobile-icon--info {
+  border-color: #94a3b8;
+}
+
+/* 햄버거 버튼은 왼쪽 */
+.mobile-icon-button--menu {
+  margin-right: auto;
+}
+
+/* 목차와 다크모드 버튼은 오른쪽에 그룹화 */
+.mobile-icon-button--info {
+  margin-left: auto;
+}
+
+.mobile-icon-button--theme {
+  margin-left: 8px;
+}
+
+.mobile-icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.mobile-icon-button:active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-awsui-theme='dark'] .mobile-icon-button {
+  color: #94a3b8;
+}
+
+[data-awsui-theme='dark'] .mobile-icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+}
+
+/* 데스크톱에서 햄버거 버튼 숨김 */
+@media (min-width: 689px) {
+  [class*='awsui_utilities']>*:first-child {
+    display: none !important;
+  }
+}
+
+/* SideNavigation 스타일 개선 */
+.awsui-side-navigation {
+  background-color: var(--color-background-container-content);
+}
+
+/* 네비게이션 헤더 */
+.awsui-side-navigation-header {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-heading-default);
+  border-bottom: 1px solid var(--color-border-divider-default);
+}
+
+/* 네비게이션 섹션 */
+.awsui-side-navigation-section-header {
+  padding: 0.75rem 1.5rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-body-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 네비게이션 링크 */
+.awsui-side-navigation-link {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.9375rem;
+  color: var(--color-text-body-default);
+  transition: all 0.15s ease;
+  border-left: 3px solid transparent;
+}
+
+.awsui-side-navigation-link:hover {
+  background-color: var(--color-background-layout-main);
+  color: var(--color-text-link-default);
+}
+
+.awsui-side-navigation-link-active {
+  background-color: rgba(255, 153, 0, 0.08);
+  border-left-color: #ff9900;
+  color: #ff9900;
+  font-weight: 600;
+}
+
+[data-awsui-theme='dark'] .awsui-side-navigation-link-active {
+  background-color: rgba(255, 153, 0, 0.12);
+}
+
+/* 구분선 */
+.awsui-side-navigation-divider {
+  margin: 0.5rem 0;
+  border-top: 1px solid var(--color-border-divider-default);
+}
+
+/* Footer 공간 확보 */
+.app-content-wrapper {
+  padding-bottom: 60px;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme='dark'] .app-content-wrapper {
+  padding-bottom: 60px;
+}
+
+/* 사이드바와 용어사전 하단 여백 추가 (Footer 가림 방지) */
+/* CloudScape의 동적 클래스명을 가진 nav 요소 */
+nav[class*='awsui_navigation'] {
+  padding-bottom: 100px !important;
+}
+
+/* CloudScape의 동적 클래스명을 가진 aside 요소 (용어사전) */
+aside[class*='awsui'][class*='tools'] {
+  padding-bottom: 100px !important;
+}

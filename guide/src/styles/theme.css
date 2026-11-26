@@ -1,0 +1,143 @@
+/* CloudScape 다크 모드 및 테마 설정 */
+
+/* 기본 테마 변수 */
+:root {
+    --aws-orange: #ff9900;
+    --aws-blue: #146eb4;
+    --aws-green: #1d8102;
+    --aws-red: #d13212;
+
+    /* 커스텀 브랜드 색상 */
+    --brand-primary: var(--aws-orange);
+    --brand-secondary: var(--aws-blue);
+    --brand-accent: var(--aws-green);
+}
+
+/* 라이트 모드 */
+.awsui-light-mode {
+    --background-primary: #ffffff;
+    --background-secondary: #f2f3f3;
+    --text-primary: #16191f;
+    --text-secondary: #5f6b7a;
+    --border-color: #d5dbdb;
+}
+
+/* 다크 모드 */
+.awsui-dark-mode {
+    --background-primary: #16191f;
+    --background-secondary: #232f3e;
+    --text-primary: #ffffff;
+    --text-secondary: #d5dbdb;
+    --border-color: #414d5c;
+}
+
+/* 전역 스타일 */
+body {
+    font-family:
+        "Pretendard Variable", Pretendard,
+        -apple-system, BlinkMacSystemFont,
+        "Apple SD Gothic Neo",
+        "Noto Sans KR", "Malgun Gothic", "맑은 고딕",
+        "Nanum Gothic", "나눔고딕",
+        "Amazon Ember", "Helvetica Neue", Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* CloudScape 컴포넌트 커스터마이징 */
+.awsui-app-layout {
+    min-height: 100vh;
+}
+
+/* 네비게이션 스타일 */
+.awsui-side-navigation {
+    border-right: 1px solid var(--border-color);
+}
+
+/* 브레드크럼 스타일 */
+.awsui-breadcrumb-group {
+    padding: 16px 0;
+}
+
+/* 도움말 패널 스타일 */
+.awsui-help-panel {
+    border-left: 1px solid var(--border-color);
+}
+
+/* 커스텀 유틸리티 클래스 */
+.text-brand-primary {
+    color: var(--brand-primary) !important;
+}
+
+.text-brand-secondary {
+    color: var(--brand-secondary) !important;
+}
+
+.bg-brand-primary {
+    background-color: var(--brand-primary) !important;
+}
+
+.bg-brand-secondary {
+    background-color: var(--brand-secondary) !important;
+}
+
+/* 애니메이션 */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .awsui-app-layout {
+        font-size: 14px;
+    }
+}
+
+/* 다크 모드 전환 애니메이션 */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 접근성 개선 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 포커스 스타일 */
+.awsui-button:focus,
+.awsui-link:focus {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+}
+
+/* 고대비 모드 지원 */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+    }
+
+    .awsui-dark-mode {
+        --border-color: #ffffff;
+    }
+}

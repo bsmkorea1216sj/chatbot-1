@@ -1,0 +1,102 @@
+/* TaskQuiz 컴포넌트 스타일 */
+
+.task-quiz-wrapper {
+    margin: 1rem 0;
+}
+
+/* 퀴즈 문제 스타일 */
+.quiz-question {
+    padding: 1rem;
+    background-color: var(--color-background-container-content);
+    border: 1px solid var(--color-border-divider-default);
+    border-radius: 8px;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme="dark"] .quiz-question {
+    background-color: var(--color-background-container-content);
+    border-color: var(--color-border-divider-default);
+}
+
+/* 문제 번호 스타일 */
+.quiz-question h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-heading-default);
+    margin-bottom: 0.5rem;
+}
+
+/* 문제 텍스트 스타일 */
+.quiz-question p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-body-default);
+    margin-bottom: 1rem;
+}
+
+/* 선택지 스타일 */
+.quiz-question .awsui-radio-group {
+    margin: 1rem 0;
+}
+
+/* 정답/오답 Alert 스타일 */
+.quiz-question .awsui-alert {
+    margin-top: 1rem;
+}
+
+/* 제출 버튼 영역 */
+.quiz-submit-area {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* 점수 표시 스타일 */
+.quiz-score-badge {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* 완료 메시지 스타일 */
+.quiz-completion-message {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-body-default);
+}
+
+/* 다시 풀기 버튼 */
+.quiz-reset-button {
+    margin-top: 1rem;
+}
+
+/* ExpandableSection 헤더 스타일 */
+.task-quiz-wrapper .awsui-expandable-section-header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-heading-default);
+}
+
+/* 접힌 상태 표시 */
+.task-quiz-wrapper .awsui-expandable-section-header-collapsed {
+    opacity: 0.8;
+}
+
+/* 펼쳐진 상태 */
+.task-quiz-wrapper .awsui-expandable-section-header-expanded {
+    opacity: 1;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .quiz-question {
+        padding: 0.75rem;
+    }
+
+    .quiz-question h4,
+    .quiz-question p {
+        font-size: 0.875rem;
+    }
+
+    .quiz-submit-area {
+        padding: 0.75rem 0;
+    }
+}

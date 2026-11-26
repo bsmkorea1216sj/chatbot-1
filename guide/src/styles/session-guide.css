@@ -1,0 +1,93 @@
+/* SessionGuide 페이지 스타일 */
+
+/* 메인 섹션 제목 (📋 실습 개요) - Container Header */
+.session-section-title.main-header {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+}
+
+/* 서브 섹션 제목 (🎯 실습 목표, 📋 주요 태스크) - Box */
+.session-section-title.sub-header {
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+}
+
+/* 학습 목표 및 주요 태스크 리스트 */
+.session-objectives-list,
+.session-tasks-list {
+    font-size: 1rem;
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.session-objectives-list li,
+.session-tasks-list li {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0.75rem;
+}
+
+/* 빈 메시지 스타일 */
+.session-empty-message {
+    color: #5f6b7a;
+    font-style: italic;
+}
+
+[data-awsui-theme="dark"] .session-empty-message {
+    color: #9ba7b6;
+}
+
+/* 다운로드 파일 헤더 */
+.download-file-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.download-file-name-wrapper {
+    flex: 1;
+}
+
+/* 다운로드 파일 구분선 */
+.download-file-divider {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #e9ebed;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme="dark"] .download-file-divider {
+    border-top-color: #414d5c;
+}
+
+/* 가이드 헤더 제목 */
+.guide-header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* 핵심 포인트 헤더 제목 */
+.key-points-header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* 핵심 포인트 아이템 */
+.key-point-item {
+    border-left: 3px solid #0972d3;
+    background-color: var(--color-background-container-content);
+    border-radius: 4px;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme="dark"] .key-point-item {
+    border-left-color: #0972d3;
+}
+
+.key-point-content {
+    flex: 1;
+}

@@ -1,0 +1,97 @@
+/* 공통 푸터 스타일 */
+
+.app-footer {
+    padding: 1rem 2rem;
+    text-align: center;
+    border-top: 1px solid #2d3748;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #0f172a;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.app-footer-copyright {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.app-footer-credit {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.app-footer-link {
+    color: #7B44F2;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.app-footer-link:hover {
+    color: #9d6fff;
+    text-decoration: underline;
+}
+
+/* Light 버전 (홈페이지용) */
+.app-footer--light {
+    background-color: #0f172a;
+    border-top-color: #2d3748;
+}
+
+/* Dark 버전 (다른 페이지용) */
+.app-footer--dark {
+    background-color: #0f172a;
+    border-top-color: #2d3748;
+}
+
+[data-awsui-theme="dark"] .app-footer--dark {
+    background-color: #020617;
+    border-top-color: #1e293b;
+}
+
+/* 메인 콘텐츠에 푸터 높이만큼 여백 추가 */
+.awsui-app-layout {
+    padding-bottom: 70px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .app-footer {
+        padding: 0.75rem 1rem;
+        height: 80px;
+    }
+
+    .app-footer-content {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .app-footer-copyright,
+    .app-footer-credit {
+        font-size: 0.75rem;
+    }
+
+    .awsui-app-layout {
+        padding-bottom: 80px;
+    }
+}

@@ -1,0 +1,44 @@
+/* UserValue 컴포넌트 스타일 - 복사 버튼 왼쪽, 빨간 텍스트 */
+
+.user-value-wrapper {
+    display: inline-block;
+    vertical-align: baseline;
+    border-radius: 6px;
+}
+
+/* 복사 버튼 - 왼쪽 */
+.user-value-copy-button {
+    display: inline-block;
+    vertical-align: baseline;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+/* 텍스트 영역 - 오른쪽, 빨간색 */
+.user-value-code {
+    display: inline-block;
+    vertical-align: baseline;
+    padding: 2px 6px;
+    margin: 0 4px 0 0;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'D2Coding', 'D2 coding', Monaco, Menlo, "Ubuntu Mono", monospace;
+    font-weight: 700;
+    background-color: #ffffff;
+    color: #d13212;
+    border: 1px solid #e0e0e0;
+    line-height: 1.5;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme="dark"] .user-value-copy-button {
+    background-color: transparent;
+    border: none;
+}
+
+[data-awsui-theme="dark"] .user-value-code {
+    background-color: #0f1b2a;
+    color: #ff6b6b;
+    border-color: #5f6b7a;
+}

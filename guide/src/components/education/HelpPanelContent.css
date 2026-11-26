@@ -1,0 +1,572 @@
+/* Help Panel - 용어 사전 (아코디언 스타일) */
+
+.help-panel-wrapper {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 페이지 목차 (TOC) 섹션 */
+.toc-section {
+  background: var(--color-background-container-content);
+  border: 2px solid var(--color-border-divider-default);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* 페이지 목차 헤더 클릭 가능 */
+.toc-header-clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin: -0.25rem -0.5rem;
+  border-radius: 6px;
+}
+
+.toc-header-clickable:hover {
+  background: var(--color-background-button-normal-hover);
+  transform: translateX(2px);
+}
+
+.toc-header-clickable:active {
+  background: var(--color-background-button-normal-active);
+}
+
+.toc-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.toc-section a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  color: inherit !important;
+}
+
+.toc-section a:hover {
+  background: var(--color-background-button-normal-hover);
+  transform: translateX(4px);
+}
+
+.toc-section a:active {
+  background: var(--color-background-button-normal-active);
+}
+
+/* TOC 아이템 텍스트 스타일 */
+.toc-item-text {
+  display: inline-block;
+}
+
+.toc-level-1 {
+  font-weight: bold;
+  color: var(--color-text-heading-default) !important;
+}
+
+.toc-level-2 {
+  padding-left: 1.5rem;
+  color: var(--color-text-body-secondary) !important;
+  font-weight: normal;
+}
+
+/* 다크모드 */
+[data-awsui-theme='dark'] .toc-section {
+  background: var(--color-background-container-content);
+  border-color: var(--color-border-divider-default);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 아코디언 컨테이너 */
+.help-accordion-container {
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  padding-right: 4px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 스크롤바 스타일 */
+.help-accordion-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.help-accordion-container::-webkit-scrollbar-track {
+  background: var(--color-background-container-content);
+  border-radius: 4px;
+}
+
+.help-accordion-container::-webkit-scrollbar-thumb {
+  background: var(--color-border-divider-default);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.help-accordion-container::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-item-hover);
+}
+
+/* 용어 카드 - 2행 레이아웃 */
+.help-term-card {
+  background: var(--color-background-container-content);
+  border: 1px solid var(--color-border-divider-default);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.help-term-card:hover {
+  border-color: var(--color-border-item-hover);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 용어 헤더 (1번째 행) - 카테고리 색상 배경 */
+.help-term-header {
+  padding: 0.4rem 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 32px;
+}
+
+/* 용어명 스타일 */
+.help-term-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: Monaco, Menlo, 'Ubuntu Mono', monospace;
+  word-break: break-word;
+  flex: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 카테고리 배지 (헤더 내) */
+.help-term-category-badge {
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 용어 설명 (2번째 행) */
+.help-term-body {
+  padding: 0.8rem 0.9rem;
+  background: var(--color-background-container-content);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+/* AWS 카테고리별 테두리 색상 (4방향) */
+.category-management + .help-term-body {
+  border-color: rgba(231, 21, 123, 0.3);
+}
+
+.category-storage + .help-term-body {
+  border-color: rgba(122, 161, 22, 0.3);
+}
+
+.category-compute + .help-term-body {
+  border-color: rgba(255, 153, 0, 0.3);
+}
+
+.category-networking + .help-term-body {
+  border-color: rgba(140, 79, 255, 0.3);
+}
+
+.category-database + .help-term-body {
+  border-color: rgba(201, 37, 209, 0.3);
+}
+
+.category-security + .help-term-body {
+  border-color: rgba(221, 52, 76, 0.3);
+}
+
+.category-ai-ml + .help-term-body {
+  border-color: rgba(1, 168, 141, 0.3);
+}
+
+.category-containers + .help-term-body {
+  border-color: rgba(255, 153, 0, 0.3);
+}
+
+.category-developer-tools + .help-term-body {
+  border-color: rgba(201, 37, 209, 0.3);
+}
+
+.category-analytics + .help-term-body {
+  border-color: rgba(140, 79, 255, 0.3);
+}
+
+.category-cost-management + .help-term-body {
+  border-color: rgba(122, 161, 22, 0.3);
+}
+
+.category-default + .help-term-body {
+  border-color: rgba(104, 112, 120, 0.3);
+}
+
+.help-term-definition {
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  color: var(--color-text-body-default);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic',
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 첫 번째 문단 (주요 설명) 강조 */
+.help-term-definition::first-line {
+  font-weight: 600;
+  color: var(--color-text-heading-default);
+  letter-spacing: -0.015em;
+}
+
+/* AWS 카테고리별 배경색 */
+.help-term-header.category-management {
+  background: linear-gradient(135deg, #e7157b 0%, #c91265 100%);
+}
+
+.help-term-header.category-storage {
+  background: linear-gradient(135deg, #7aa116 0%, #5f8011 100%);
+}
+
+.help-term-header.category-compute {
+  background: linear-gradient(135deg, #ff9900 0%, #e68a00 100%);
+}
+
+.help-term-header.category-networking {
+  background: linear-gradient(135deg, #8c4fff 0%, #7339e6 100%);
+}
+
+.help-term-header.category-database {
+  background: linear-gradient(135deg, #c925d1 0%, #a91eb3 100%);
+}
+
+.help-term-header.category-security {
+  background: linear-gradient(135deg, #dd344c 0%, #c42d42 100%);
+}
+
+.help-term-header.category-ai-ml {
+  background: linear-gradient(135deg, #01a88d 0%, #018f77 100%);
+}
+
+.help-term-header.category-containers {
+  background: linear-gradient(135deg, #ff9900 0%, #e68a00 100%);
+}
+
+.help-term-header.category-developer-tools {
+  background: linear-gradient(135deg, #c925d1 0%, #a91eb3 100%);
+}
+
+.help-term-header.category-analytics {
+  background: linear-gradient(135deg, #8c4fff 0%, #7339e6 100%);
+}
+
+.help-term-header.category-cost-management {
+  background: linear-gradient(135deg, #7aa116 0%, #5f8011 100%);
+}
+
+/* 카테고리가 없는 경우 기본 스타일 */
+.help-term-header.category-default {
+  background: linear-gradient(135deg, #687078 0%, #545b64 100%);
+}
+
+/* 다크모드 */
+[data-awsui-theme='dark'] .help-term-card {
+  background: var(--color-background-container-content);
+  border-color: var(--color-border-divider-default);
+}
+
+[data-awsui-theme='dark'] .help-term-card:hover {
+  border-color: var(--color-border-item-hover);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+[data-awsui-theme='dark'] .help-term-body {
+  background: var(--color-background-container-content);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-awsui-theme='dark'] .help-term-definition {
+  color: var(--color-text-body-default);
+}
+
+[data-awsui-theme='dark'] .help-accordion-container::-webkit-scrollbar-track {
+  background: var(--color-background-container-content);
+}
+
+[data-awsui-theme='dark'] .help-accordion-container::-webkit-scrollbar-thumb {
+  background: var(--color-border-divider-default);
+}
+
+[data-awsui-theme='dark']
+  .help-accordion-container::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-item-hover);
+}
+
+/* AWS 카테고리 배지 스타일 - 개선된 디자인 */
+.aws-category-badge {
+  color: #fff;
+  padding: 0.3rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.aws-category-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Management (Management & Governance 축약) - 핑크색 */
+.aws-category-management {
+  background-color: #e7157b;
+}
+
+/* Storage - 초록색 */
+.aws-category-storage {
+  background-color: #7aa116;
+}
+
+/* Compute - 오렌지색 */
+.aws-category-compute {
+  background-color: #ff9900;
+}
+
+/* Networking - 보라색 */
+.aws-category-networking {
+  background-color: #8c4fff;
+}
+
+/* Database - 자주색 */
+.aws-category-database {
+  background-color: #c925d1;
+}
+
+/* Security - 빨간색 */
+.aws-category-security {
+  background-color: #dd344c;
+}
+
+/* AI/ML - 청록색 */
+.aws-category-ai-ml {
+  background-color: #01a88d;
+}
+
+/* Containers - 오렌지색 */
+.aws-category-containers {
+  background-color: #ff9900;
+}
+
+/* Developer Tools - 자주색 */
+.aws-category-developer-tools {
+  background-color: #c925d1;
+}
+
+/* Analytics - 보라색 */
+.aws-category-analytics {
+  background-color: #8c4fff;
+}
+
+/* Cost Management - 초록색 */
+.aws-category-cost-management {
+  background-color: #7aa116;
+}
+
+/* 다크모드 - 배지 색상을 약간 밝게 조정 */
+[data-awsui-theme='dark'] .aws-category-management {
+  background-color: #f472b6;
+}
+
+[data-awsui-theme='dark'] .aws-category-storage {
+  background-color: #84cc16;
+}
+
+[data-awsui-theme='dark'] .aws-category-compute {
+  background-color: #ffb84d;
+}
+
+[data-awsui-theme='dark'] .aws-category-networking {
+  background-color: #a78bfa;
+}
+
+[data-awsui-theme='dark'] .aws-category-database {
+  background-color: #d946ef;
+}
+
+[data-awsui-theme='dark'] .aws-category-security {
+  background-color: #ef6b82;
+}
+
+[data-awsui-theme='dark'] .aws-category-ai-ml {
+  background-color: #1fc9a8;
+}
+
+[data-awsui-theme='dark'] .aws-category-containers {
+  background-color: #ffb84d;
+}
+
+[data-awsui-theme='dark'] .aws-category-developer-tools {
+  background-color: #d946ef;
+}
+
+[data-awsui-theme='dark'] .aws-category-analytics {
+  background-color: #a78bfa;
+}
+
+[data-awsui-theme='dark'] .aws-category-cost-management {
+  background-color: #84cc16;
+}
+
+/* 검색 하이라이팅 */
+.search-highlight {
+  background-color: #ffeb3b;
+  color: #000000;
+  font-weight: 600;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+[data-awsui-theme='dark'] .search-highlight {
+  background-color: #fdd835;
+  color: #000000;
+}
+
+/* 빠른 점프 섹션 */
+.quick-jump-section {
+  background: var(--color-background-container-content);
+  border: 2px solid var(--color-border-divider-default);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.quick-jump-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.quick-jump-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-heading-default);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quick-jump-clear-btn {
+  background: var(--color-background-button-normal-default);
+  border: 1px solid var(--color-border-button-normal-default);
+  color: var(--color-text-button-normal-default);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.quick-jump-clear-btn:hover {
+  background: var(--color-background-button-normal-hover);
+  border-color: var(--color-border-button-normal-hover);
+}
+
+.quick-jump-clear-btn:active {
+  background: var(--color-background-button-normal-active);
+  border-color: var(--color-border-button-normal-active);
+}
+
+.quick-jump-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.quick-jump-chip {
+  background: var(--color-background-button-normal-default);
+  border: 1px solid var(--color-border-button-normal-default);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-button-normal-default);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.quick-jump-chip:hover {
+  background: var(--color-background-button-primary-default);
+  color: var(--color-text-button-primary-default);
+  border-color: var(--color-border-button-primary-default);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 선택된 칩 스타일 */
+.quick-jump-chip.selected {
+  background: var(--color-background-button-primary-default);
+  color: var(--color-text-button-primary-default);
+  border-color: var(--color-border-button-primary-default);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.quick-jump-chip-text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.quick-jump-chip-text:hover {
+  text-decoration: none;
+}
+
+/* 다크모드 */
+[data-awsui-theme='dark'] .quick-jump-section {
+  background: var(--color-background-container-content);
+  border-color: var(--color-border-divider-default);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,142 @@
+/* badges.css import */
+@import './badges.css';
+
+/* ============================================
+   헤더 컨테이너 스타일
+   ============================================ */
+
+/* 학기 정보 스타일 */
+.dashboard-semester-info {
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 0.75rem 0;
+    letter-spacing: 0.3px;
+    color: #545b64;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme="dark"] .dashboard-semester-info {
+    color: #d1d5db;
+}
+
+/* ============================================
+   섹션 제목 스타일 (이모지 포함)
+   ============================================ */
+
+.section-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ============================================
+   주차 카드 스타일
+   ============================================ */
+
+.week-card {
+    background-color: var(--color-background-container-content);
+    border: 1px solid #d5dbdb;
+    border-top: 4px solid #9ba7b0;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.week-card:hover {
+    transform: translateY(-4px);
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme="dark"] .week-card {
+    background-color: var(--color-background-container-content);
+    border-color: #414d5c;
+    border-top-color: #687078;
+}
+
+[data-awsui-theme="dark"] .week-card:hover {
+    transform: translateY(-4px);
+}
+
+/* ============================================
+   차시 아이템 스타일
+   ============================================ */
+
+.session-item {
+    padding: 0.75rem;
+    background-color: var(--color-background-container-content);
+    border: 1px solid var(--color-border-divider-default);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.session-item:hover {
+    background-color: var(--color-background-container-header);
+    border-color: var(--color-border-item-focused);
+}
+
+/* 차시 제목 링크 색상 - 데모 파란색과 구분 */
+.session-item a {
+    color: #545b64 !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 1rem;
+    /* 16px 표준 크기 */
+}
+
+.session-item a:hover {
+    color: #ec7211 !important;
+    text-decoration: underline;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme="dark"] .session-item {
+    background-color: var(--color-background-container-content);
+    border-color: var(--color-border-divider-default);
+}
+
+[data-awsui-theme="dark"] .session-item:hover {
+    background-color: var(--color-background-container-header);
+    border-color: var(--color-border-item-focused);
+}
+
+[data-awsui-theme="dark"] .session-item a {
+    color: #d1d5db !important;
+}
+
+[data-awsui-theme="dark"] .session-item a:hover {
+    color: #ff9900 !important;
+}
+
+/* ============================================
+   AWS 서비스 레이블 스타일
+   ============================================ */
+
+.aws-services-label {
+    font-size: 0.875rem;
+    /* 14px - 보조 정보용 작은 크기 */
+}
+
+/* ============================================
+   반응형 디자인
+   ============================================ */
+
+@media (max-width: 768px) {
+    .week-card {
+        padding: 0.75rem;
+    }
+
+    .session-item {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .week-card {
+        padding: 0.5rem;
+    }
+
+    .session-item {
+        padding: 0.5rem;
+    }
+}

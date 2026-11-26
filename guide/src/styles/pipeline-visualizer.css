@@ -1,0 +1,70 @@
+/* PipelineVisualizer 컴포넌트 스타일 */
+
+/* 파이프라인 단계 카드 */
+.pipeline-step-card {
+    padding: 12px;
+    border: 1px solid var(--color-border-divider-default);
+    border-radius: 8px;
+    background-color: var(--color-background-container-content);
+    position: relative;
+}
+
+.pipeline-step-card--running {
+    background-color: var(--color-background-notification-blue);
+}
+
+/* 클릭 가능한 카드 */
+.pipeline-step-card--clickable {
+    cursor: pointer;
+}
+
+.pipeline-step-card--clickable:hover {
+    transform: translateX(4px);
+    transition: transform 0.2s ease;
+}
+
+/* 단계 번호 배지 */
+.pipeline-step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-background-status-neutral);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.pipeline-step-number--success {
+    background-color: var(--color-background-status-success);
+}
+
+.pipeline-step-number--failed {
+    background-color: var(--color-background-status-error);
+}
+
+.pipeline-step-number--running {
+    background-color: var(--color-background-status-info);
+}
+
+.pipeline-step-number--pending {
+    background-color: var(--color-background-status-neutral);
+}
+
+/* 단계 정보 영역 */
+.pipeline-step-info {
+    flex: 1;
+}
+
+/* 단계 연결선 */
+.pipeline-step-connector {
+    position: absolute;
+    left: 15px;
+    top: 100%;
+    width: 2px;
+    height: 16px;
+    background-color: var(--color-border-divider-default);
+}
