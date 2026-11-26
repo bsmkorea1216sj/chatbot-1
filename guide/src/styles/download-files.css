@@ -1,0 +1,287 @@
+/* 파일 다운로드 컴포넌트 - 세련된 디자인 */
+
+.file-download-box {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+    margin-bottom: 32px;
+}
+
+/* 다운로드 버튼 */
+.file-download-box .awsui-button-variant-primary {
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: 600;
+}
+
+/* 정보 아이콘 버튼 */
+.file-download-box .awsui-button-variant-inline-icon {
+    color: #687078;
+    transition: all 0.2s ease;
+}
+
+.file-download-box .awsui-button-variant-inline-icon:hover {
+    color: #0972d3;
+    transform: scale(1.1);
+}
+
+/* 팝오버 내용 */
+.file-info-popover {
+    max-width: 450px;
+    width: 100%;
+    padding: 16px;
+    background: #ffffff;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.file-info-popover h4 {
+    font-size: 0.8125rem;
+    /* 13px */
+    font-weight: 600;
+    color: #0f1419;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e9ebed;
+}
+
+/* 파일 목록 */
+.file-info-popover .file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* 파일 항목 */
+.file-info-popover .file-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 10px;
+    background: #f6f8fa;
+    border-radius: 6px;
+    border: 1px solid #d0d7de;
+    transition: all 0.2s ease;
+}
+
+.file-info-popover .file-item:hover {
+    border-color: #0969da;
+    background: #ddf4ff;
+}
+
+.file-info-popover .file-name {
+    font-size: 0.75rem;
+    /* 12px */
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-weight: 600;
+    color: #0969da;
+    background: #ffffff;
+    padding: 3px 6px;
+    border-radius: 3px;
+    display: inline-block;
+    width: fit-content;
+    border: 1px solid #b6e3ff;
+}
+
+.file-info-popover .file-desc {
+    font-size: 0.75rem;
+    /* 12px */
+    color: #57606a;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* 사용 태스크 */
+.usage-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.usage-task-item {
+    padding: 14px 16px 14px 44px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1.5px solid #e1e4e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.usage-task-item:hover {
+    border-color: #22c55e;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+    transform: translateX(4px);
+}
+
+.usage-task-item::before {
+    content: '✓';
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    color: #16a34a;
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: bold;
+}
+
+.usage-task-item .awsui-box {
+    font-size: 0.875rem;
+    /* 14px */
+    color: #16191f;
+    line-height: 1.6;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* 태스크 설명 텍스트 */
+.usage-task-description {
+    font-size: 0.875rem;
+    color: var(--color-text-body-secondary);
+    word-break: break-word;
+}
+
+/* 파일 설명 */
+.file-descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.file-description-item {
+    padding: 14px 16px 14px 44px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1.5px solid #e1e4e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.file-description-item:hover {
+    border-color: #0969da;
+    box-shadow: 0 4px 12px rgba(9, 105, 218, 0.15);
+    transform: translateX(4px);
+}
+
+.file-description-item::before {
+    content: '📄';
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    font-size: 1.125rem;
+    /* 18px */
+}
+
+.file-description-item .awsui-box {
+    font-size: 0.875rem;
+    /* 14px */
+    color: #16191f;
+    line-height: 1.6;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* 파일 설명 내 파일명 강조 */
+.file-description-item .awsui-box code,
+.file-description-item code {
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-weight: 800;
+    color: #0f1419;
+    background: #fff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8125rem;
+    /* 13px */
+    border: 1.5px solid #e1e4e8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* 구분선 */
+.file-info-popover hr {
+    margin: 16px 0;
+    border: none;
+    border-top: 1px solid #e9ebed;
+}
+
+/* 다크모드 */
+[data-awsui-theme="dark"] .file-download-box .awsui-button-variant-inline-icon {
+    color: #9ba7b4;
+}
+
+[data-awsui-theme="dark"] .file-download-box .awsui-button-variant-inline-icon:hover {
+    color: #539fe5;
+}
+
+[data-awsui-theme="dark"] .file-info-popover {
+    background: linear-gradient(135deg, #1a1e23 0%, #232931 100%);
+}
+
+[data-awsui-theme="dark"] .file-info-popover h4 {
+    color: #f1f3f4;
+}
+
+[data-awsui-theme="dark"] .file-info-popover .file-item {
+    background: #232931;
+    border-color: #414d5c;
+}
+
+[data-awsui-theme="dark"] .file-info-popover .file-item:hover {
+    border-color: #539fe5;
+    box-shadow: 0 2px 6px rgba(83, 159, 229, 0.15);
+}
+
+[data-awsui-theme="dark"] .file-info-popover .file-name {
+    color: #539fe5;
+    background: #1f2a37;
+}
+
+[data-awsui-theme="dark"] .file-info-popover .file-desc {
+    color: #f1f3f4;
+}
+
+[data-awsui-theme="dark"] .usage-task-item {
+    background: #232931;
+    border-color: #414d5c;
+}
+
+[data-awsui-theme="dark"] .usage-task-item:hover {
+    border-color: #16b364;
+    box-shadow: 0 2px 6px rgba(22, 179, 100, 0.15);
+}
+
+[data-awsui-theme="dark"] .usage-task-item .awsui-box {
+    color: #f1f3f4;
+}
+
+/* 다크모드 - 태스크 설명 텍스트 */
+[data-awsui-theme="dark"] .usage-task-description {
+    color: var(--color-text-body-secondary);
+}
+
+[data-awsui-theme="dark"] .file-description-item {
+    background: #232931;
+    border-color: #414d5c;
+}
+
+[data-awsui-theme="dark"] .file-description-item:hover {
+    border-color: #539fe5;
+    box-shadow: 0 2px 6px rgba(83, 159, 229, 0.15);
+}
+
+[data-awsui-theme="dark"] .file-description-item .awsui-box {
+    color: #f1f3f4;
+}
+
+[data-awsui-theme="dark"] .file-description-item code {
+    color: #539fe5;
+    background: #1f2a37;
+}
+
+[data-awsui-theme="dark"] .file-info-popover hr {
+    border-top-color: #414d5c;
+}

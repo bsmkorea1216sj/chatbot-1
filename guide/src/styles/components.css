@@ -1,0 +1,14 @@
+/* 커스텀 컴포넌트 스타일 - 최적화됨 */
+
+/* 애니메이션 정의 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

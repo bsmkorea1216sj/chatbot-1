@@ -1,0 +1,14 @@
+/* KeyPointsChecklist 컴포넌트 스타일 */
+
+.checklist-item-text {
+    font-size: 1rem;
+}
+
+.checklist-item-text--checked {
+    color: var(--color-text-status-success);
+}
+
+.checklist-completion-message {
+    font-size: 1rem;
+    color: var(--color-text-status-success);
+}

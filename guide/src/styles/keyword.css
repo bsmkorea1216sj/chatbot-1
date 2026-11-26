@@ -1,0 +1,31 @@
+/* Keyword 컴포넌트 스타일 */
+
+.keyword-button-wrapper {
+    display: inline-block;
+    margin: 0 2px;
+    vertical-align: middle;
+}
+
+.keyword-field-name {
+    font-weight: 700;
+}
+
+.keyword-highlight {
+    color: var(--color-text-interactive-default);
+    font-weight: 700;
+    background-color: var(--color-background-container-content);
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border-divider-default);
+    white-space: nowrap;
+    display: inline-block;
+    margin: 0 2px;
+    vertical-align: middle;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme="dark"] .keyword-highlight {
+    color: #5ab0f6;
+    background-color: #1a3a52;
+    border-color: #2a4a62;
+}

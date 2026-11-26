@@ -1,0 +1,112 @@
+/* 다운로드 버튼 파란색 오버라이드 - 최우선 순위 */
+.download-file-button,
+button.download-file-button,
+.awsui-button.download-file-button,
+button[class*='awsui_button'].download-file-button {
+  background-color: #0972d3 !important;
+  border-color: #0972d3 !important;
+  color: #ffffff !important;
+}
+
+.download-file-button:hover,
+button.download-file-button:hover,
+.awsui-button.download-file-button:hover,
+button[class*='awsui_button'].download-file-button:hover {
+  background-color: #0862c2 !important;
+  border-color: #0862c2 !important;
+  color: #ffffff !important;
+}
+
+.download-file-button:active,
+button.download-file-button:active,
+.awsui-button.download-file-button:active,
+button[class*='awsui_button'].download-file-button:active {
+  background-color: #07538f !important;
+  border-color: #07538f !important;
+  color: #ffffff !important;
+}
+
+.download-file-button:focus,
+button.download-file-button:focus,
+.awsui-button.download-file-button:focus,
+button[class*='awsui_button'].download-file-button:focus {
+  box-shadow: 0 0 0 2px #0972d3 !important;
+}
+
+/* 더 구체적인 선택자로 guide-badges.css 오버라이드 */
+button[class*='awsui_button'][class*='awsui_variant-normal'].download-file-button {
+  background-color: #0972d3 !important;
+  border-color: #0972d3 !important;
+  color: #ffffff !important;
+}
+
+button[class*='awsui_button'][class*='awsui_variant-normal'].download-file-button:hover:not(
+    :disabled
+  ) {
+  background-color: #0862c2 !important;
+  border-color: #0862c2 !important;
+  color: #ffffff !important;
+}
+
+button[class*='awsui_button'][class*='awsui_variant-normal'].download-file-button:active:not(
+    :disabled
+  ) {
+  background-color: #07538f !important;
+  border-color: #07538f !important;
+  color: #ffffff !important;
+}
+
+/* 다크모드에서도 라이트 모드와 동일한 파란색 유지 */
+[data-awsui-theme='dark'] .download-file-button,
+[data-awsui-theme='dark'] button.download-file-button,
+[data-awsui-theme='dark'] .awsui-button.download-file-button,
+[data-awsui-theme='dark'] button[class*='awsui_button'].download-file-button {
+  background-color: #0972d3 !important;
+  border-color: #0972d3 !important;
+  color: #ffffff !important;
+}
+
+[data-awsui-theme='dark'] .download-file-button:hover,
+[data-awsui-theme='dark'] button.download-file-button:hover,
+[data-awsui-theme='dark'] .awsui-button.download-file-button:hover,
+[data-awsui-theme='dark']
+  button[class*='awsui_button'].download-file-button:hover {
+  background-color: #0862c2 !important;
+  border-color: #0862c2 !important;
+  color: #ffffff !important;
+}
+
+[data-awsui-theme='dark'] .download-file-button:active,
+[data-awsui-theme='dark'] button.download-file-button:active,
+[data-awsui-theme='dark'] .awsui-button.download-file-button:active,
+[data-awsui-theme='dark']
+  button[class*='awsui_button'].download-file-button:active {
+  background-color: #07538f !important;
+  border-color: #07538f !important;
+  color: #ffffff !important;
+}
+
+[data-awsui-theme='dark']
+  button[class*='awsui_button'][class*='awsui_variant-normal'].download-file-button {
+  background-color: #0972d3 !important;
+  border-color: #0972d3 !important;
+  color: #ffffff !important;
+}
+
+[data-awsui-theme='dark']
+  button[class*='awsui_button'][class*='awsui_variant-normal'].download-file-button:hover:not(
+    :disabled
+  ) {
+  background-color: #0862c2 !important;
+  border-color: #0862c2 !important;
+  color: #ffffff !important;
+}
+
+[data-awsui-theme='dark']
+  button[class*='awsui_button'][class*='awsui_variant-normal'].download-file-button:active:not(
+    :disabled
+  ) {
+  background-color: #07538f !important;
+  border-color: #07538f !important;
+  color: #ffffff !important;
+}

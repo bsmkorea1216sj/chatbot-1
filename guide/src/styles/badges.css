@@ -1,0 +1,199 @@
+/* AWS 서비스 배지 스타일 - AWS Architecture Icons 공식 색상 */
+
+.aws-service-badge {
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1875rem;
+  white-space: nowrap;
+  background-color: #ff9900;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.aws-service-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.aws-service-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.aws-service-badge:hover::before {
+  opacity: 1;
+}
+
+[data-awsui-theme='dark'] .aws-service-badge {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-awsui-theme='dark'] .aws-service-badge:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Management & Governance - 핑크색 */
+.aws-service-badge.cloudshell,
+.aws-service-badge.cloudwatch,
+.aws-service-badge.cloudformation,
+.aws-service-badge.well-architected-tool,
+.aws-service-badge.well-architected-framework,
+.aws-service-badge.cloudtrail,
+.aws-service-badge.config,
+.aws-service-badge.eventbridge,
+.aws-service-badge.systems-manager,
+.aws-service-badge.parameter-store,
+.aws-service-badge.sns {
+  background-color: #e7157b;
+}
+
+/* AWS Management Console - 자주색 (Developer Tools와 동일) */
+.aws-service-badge.console {
+  background-color: #c925d1;
+}
+
+/* Cloud Financial Management - 초록색 (Storage와 동일) */
+.aws-service-badge.cost-explorer,
+.aws-service-badge.budgets,
+.aws-service-badge.backup {
+  background-color: #7aa116;
+}
+
+/* Storage - 초록색 */
+.aws-service-badge.s3,
+.aws-service-badge.ebs,
+.aws-service-badge.storage-gateway {
+  background-color: #7aa116;
+}
+
+/* Compute - 오렌지색 */
+.aws-service-badge.ec2,
+.aws-service-badge.lambda,
+.aws-service-badge.ecs,
+.aws-service-badge.eks,
+.aws-service-badge.fargate,
+.aws-service-badge.auto-scaling {
+  background-color: #ff9900;
+}
+
+/* Networking & Content Delivery - 보라색 */
+.aws-service-badge.vpc,
+.aws-service-badge.elb,
+.aws-service-badge.alb,
+.aws-service-badge.elastic-load-balancing,
+.aws-service-badge.api-gateway,
+.aws-service-badge.cloudfront,
+.aws-service-badge.route-53,
+.aws-service-badge.transit-gateway,
+.aws-service-badge.privatelink,
+.aws-service-badge.vpn,
+.aws-service-badge.direct-connect {
+  background-color: #8c4fff;
+}
+
+/* Database - 자주색 */
+.aws-service-badge.rds,
+.aws-service-badge.dynamodb,
+.aws-service-badge.aurora,
+.aws-service-badge.elasticache {
+  background-color: #c925d1;
+}
+
+/* Developer Tools - 자주색 (Database와 동일) */
+.aws-service-badge.codepipeline,
+.aws-service-badge.codebuild,
+.aws-service-badge.codecommit,
+.aws-service-badge.codedeploy,
+.aws-service-badge.infrastructure-composer {
+  background-color: #c925d1;
+}
+
+/* Security, Identity & Compliance - 빨간색 */
+.aws-service-badge.iam,
+.aws-service-badge.cognito,
+.aws-service-badge.guardduty,
+.aws-service-badge.security-hub,
+.aws-service-badge.secrets-manager,
+.aws-service-badge.kms {
+  background-color: #dd344c;
+}
+
+/* Management & Governance - Organizations는 핑크색 */
+.aws-service-badge.organizations {
+  background-color: #e7157b;
+}
+
+/* Machine Learning - 청록색 */
+.aws-service-badge.sagemaker,
+.aws-service-badge.sagemaker-pipelines,
+.aws-service-badge.sagemaker-model-registry,
+.aws-service-badge.sagemaker-studio,
+.aws-service-badge.rekognition,
+.aws-service-badge.bedrock {
+  background-color: #01a88d;
+}
+
+/* Analytics - 보라색 (Data Analytics) */
+.aws-service-badge.glue,
+.aws-service-badge.athena,
+.aws-service-badge.lake-formation,
+.aws-service-badge.redshift,
+.aws-service-badge.opensearch-serverless {
+  background-color: #8c4fff;
+}
+
+/* Business Intelligence - 보라색 (Analytics와 동일) */
+.aws-service-badge.quicksight {
+  background-color: #8c4fff;
+}
+
+/* Business Intelligence - 빨간색 */
+.aws-service-badge.quick-suite {
+  background-color: #dd344c;
+}
+
+/* Containers - 오렌지색 */
+.aws-service-badge.ecr,
+.aws-service-badge.eks {
+  background-color: #ff9900;
+}
+
+/* Additional Services */
+/* AWS X-Ray - 보라색 (Developer Tools) */
+.aws-service-badge.xray {
+  background-color: #c925d1;
+}
+
+/* AWS Resource Groups & Tag Editor - 핑크색 (Management & Governance) */
+.aws-service-badge.resource-groups {
+  background-color: #e7157b;
+}
+
+/* 오픈소스 기술 - 회색 (AWS 서비스 아님) */
+.aws-service-badge.docker,
+.aws-service-badge.kubernetes {
+  background-color: #687078;
+}
+
+[data-awsui-theme='dark'] .aws-service-badge.docker,
+[data-awsui-theme='dark'] .aws-service-badge.kubernetes {
+  background-color: #5f6b7a;
+}

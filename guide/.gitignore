@@ -1,0 +1,60 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Lock files
+package-lock.json
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Test coverage
+coverage
+
+# macOS
+.DS_Store
+._*
+**/._.DS_Store
+
+# Vite cache
+.vite/
+
+# 촬영 대본 스크립트
+**/script*.md
+**/촬영*.md
+**/*대본*.md
+
+# Kiro IDE
+.kiro/
+
+# Husky
+.husky/
+
+# Review report
+REVIEW_REPORT.json
+
+# 교수용 가이드 (별도 전달)
+docs/

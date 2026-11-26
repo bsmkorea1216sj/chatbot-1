@@ -1,0 +1,736 @@
+/* Alert 내부 콘텐츠 레이아웃 강제 */
+.info-box-content>div {
+  display: block !important;
+  width: 100% !important;
+  font-size: 14px !important;
+}
+
+.info-box-content>div>div {
+  display: block !important;
+  width: 100% !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 14px !important;
+}
+
+/* 깔끔한 정보 박스 스타일 */
+
+.info-box {
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 18px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid;
+  overflow: hidden;
+}
+
+.info-box-icon {
+  font-size: 1.375rem;
+  /* 22px */
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 아이콘 색상을 박스 테두리 색상과 일치 */
+.info-box--note .info-box-icon svg {
+  fill: #8c4fff;
+}
+
+.info-box--warning .info-box-icon svg {
+  fill: #ff9900;
+}
+
+.info-box--tip .info-box-icon svg,
+.info-box--success .info-box-icon svg {
+  fill: #01a88d;
+}
+
+.info-box--error .info-box-icon svg {
+  fill: #dd344c;
+}
+
+.info-box--output .info-box-icon svg {
+  fill: #64748b;
+}
+
+.info-box--cost .info-box-icon svg {
+  fill: #64748b;
+}
+
+.info-box--important .info-box-icon svg {
+  fill: #8c4fff;
+}
+
+.info-box--troubleshooting .info-box-icon svg {
+  fill: #ff9900;
+}
+
+.info-box-content {
+  flex: 1;
+  font-size: 14px !important;
+  line-height: 1.8;
+  color: var(--color-text-body-default);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.info-box-content>div {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 헤더 strong만 block으로 표시 */
+.info-box-content>strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* info-box 내부 모든 하위 요소 폰트 크기 강제 */
+.info-box-content * {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 내용 안의 strong은 inline으로 표시 */
+.info-box-content div strong {
+  font-weight: 600;
+  display: inline;
+}
+
+/* Alert 내부 문단 간격 */
+.info-box-content p {
+  margin: 0 0 12px 0;
+  line-height: 1.7;
+}
+
+.info-box-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Alert 내부 리스트 스타일 개선 */
+.info-box-content ul,
+.info-box-content ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.info-box-content ul li,
+.info-box-content ol li {
+  margin-bottom: 6px;
+  line-height: 1.8;
+  padding-left: 4px;
+  font-size: 14px !important;
+}
+
+.info-box-content ul li:last-child,
+.info-box-content ol li:last-child {
+  margin-bottom: 0;
+}
+
+/* 불릿 포인트 색상 강조 */
+.info-box-content ul li::marker {
+  color: var(--color-text-body-default);
+  font-size: 1.1em;
+}
+
+.info-box-content ol li::marker {
+  color: var(--color-text-body-default);
+  font-weight: 600;
+}
+
+/* Alert 내부 코드 블록 여백 */
+.info-box-content pre {
+  margin: 12px 0;
+}
+
+/* Alert 내부 코드 블록 td 패딩 줄이기 */
+.info-box-content table td {
+  padding: 2px 8px !important;
+}
+
+/* Alert 내부 표 여백 */
+.info-box-content table {
+  margin: 16px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-box-content table th,
+.info-box-content table td {
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid var(--color-border-divider-default);
+}
+
+.info-box-content table th {
+  background-color: rgba(0, 0, 0, 0.03);
+  font-weight: 600;
+}
+
+[data-awsui-theme='dark'] .info-box-content table th {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 타입별 스타일 - AWS 배지 색상 기반 (alpha 투명도 적용) */
+.info-box--note {
+  background-color: #f3f0ff;
+  /* AWS Networking 보라색 기반 - 라이트모드에서 명확하게 보이도록 */
+  border-color: rgba(140, 79, 255, 0.6);
+}
+
+.info-box--note .info-box-icon {
+  color: #8c4fff;
+}
+
+.info-box--warning {
+  background-color: rgba(255, 153, 0, 0.05);
+  /* AWS 오렌지 기반 */
+  border-color: rgba(255, 153, 0, 0.3);
+}
+
+.info-box--warning .info-box-icon {
+  color: #ff9900;
+}
+
+.info-box--tip {
+  background-color: rgba(1, 168, 141, 0.05);
+  /* AWS SageMaker 청록색 기반 */
+  border-color: rgba(1, 168, 141, 0.3);
+}
+
+.info-box--tip .info-box-icon {
+  color: #01a88d;
+}
+
+.info-box--success {
+  background-color: rgba(1, 168, 141, 0.05);
+  /* AWS SageMaker 청록색 기반 */
+  border-color: rgba(1, 168, 141, 0.3);
+}
+
+.info-box--success .info-box-icon {
+  color: #01a88d;
+}
+
+.info-box--error {
+  background-color: rgba(221, 52, 76, 0.05);
+  /* AWS Security 빨간색 기반 */
+  border-color: rgba(221, 52, 76, 0.3);
+}
+
+.info-box--error .info-box-icon {
+  color: #dd344c;
+}
+
+.info-box--output {
+  background-color: rgba(100, 116, 139, 0.04);
+  /* 회색 기반 */
+  border-color: rgba(100, 116, 139, 0.3);
+}
+
+.info-box--output .info-box-icon {
+  color: #64748b;
+}
+
+/* OUTPUT 블록 안의 CodeView 오버플로우 처리 */
+.info-box--output .info-box-content {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.info-box--output .markdown-code-block {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.info-box--output .awsui-code-view {
+  max-width: 100%;
+}
+
+.info-box--output pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.info-box--cost {
+  background-color: rgba(100, 116, 139, 0.06);
+  /* 연한 회색 - 중립적이고 튀지 않는 참고 정보 */
+  border-color: rgba(100, 116, 139, 0.25);
+}
+
+.info-box--cost .info-box-icon {
+  color: #64748b;
+}
+
+.info-box--important {
+  background-color: #f3f0ff;
+  /* AWS 보라색 기반 - 중요 정보, 라이트모드에서 명확하게 보이도록 */
+  border-color: rgba(140, 79, 255, 0.6);
+}
+
+.info-box--important .info-box-icon {
+  color: #8c4fff;
+}
+
+.info-box--troubleshooting {
+  background-color: rgba(255, 153, 0, 0.05);
+  /* AWS 오렌지 기반 - 문제 해결 */
+  border-color: rgba(255, 153, 0, 0.3);
+}
+
+.info-box--troubleshooting .info-box-icon {
+  color: #ff9900;
+}
+
+/* 다크모드 지원 - AWS 색상 기반 */
+[data-awsui-theme='dark'] .info-box--note {
+  background-color: rgba(140, 79, 255, 0.08);
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+[data-awsui-theme='dark'] .info-box--note .info-box-icon {
+  color: #a78bfa;
+}
+
+[data-awsui-theme='dark'] .info-box--warning {
+  background-color: rgba(255, 153, 0, 0.08);
+  border-color: rgba(255, 184, 77, 0.4);
+}
+
+[data-awsui-theme='dark'] .info-box--warning .info-box-icon {
+  color: #ffb84d;
+}
+
+[data-awsui-theme='dark'] .info-box--tip {
+  background-color: rgba(1, 168, 141, 0.08);
+  border-color: rgba(31, 201, 168, 0.4);
+}
+
+[data-awsui-theme='dark'] .info-box--tip .info-box-icon {
+  color: #1fc9a8;
+}
+
+[data-awsui-theme='dark'] .info-box--success {
+  background-color: rgba(1, 168, 141, 0.08);
+  border-color: rgba(31, 201, 168, 0.4);
+}
+
+[data-awsui-theme='dark'] .info-box--success .info-box-icon {
+  color: #1fc9a8;
+}
+
+[data-awsui-theme='dark'] .info-box--error {
+  background-color: rgba(221, 52, 76, 0.08);
+  border-color: rgba(239, 107, 130, 0.4);
+}
+
+[data-awsui-theme='dark'] .info-box--error .info-box-icon {
+  color: #ef6b82;
+}
+
+[data-awsui-theme='dark'] .info-box--note .info-box-icon svg {
+  fill: #a78bfa;
+}
+
+[data-awsui-theme='dark'] .info-box--warning .info-box-icon svg {
+  fill: #ffb84d;
+}
+
+[data-awsui-theme='dark'] .info-box--tip .info-box-icon svg,
+[data-awsui-theme='dark'] .info-box--success .info-box-icon svg {
+  fill: #1fc9a8;
+}
+
+[data-awsui-theme='dark'] .info-box--error .info-box-icon svg {
+  fill: #ef6b82;
+}
+
+[data-awsui-theme='dark'] .info-box--output .info-box-icon svg {
+  fill: #94a3b8;
+}
+
+[data-awsui-theme='dark'] .info-box--cost {
+  background-color: rgba(148, 163, 184, 0.08);
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+[data-awsui-theme='dark'] .info-box--cost .info-box-icon {
+  color: #94a3b8;
+}
+
+[data-awsui-theme='dark'] .info-box--cost .info-box-icon svg {
+  fill: #94a3b8;
+}
+
+[data-awsui-theme='dark'] .info-box--important {
+  background-color: rgba(140, 79, 255, 0.08);
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+[data-awsui-theme='dark'] .info-box--important .info-box-icon {
+  color: #a78bfa;
+}
+
+[data-awsui-theme='dark'] .info-box--important .info-box-icon svg {
+  fill: #a78bfa;
+}
+
+[data-awsui-theme='dark'] .info-box--troubleshooting {
+  background-color: rgba(255, 153, 0, 0.08);
+  border-color: rgba(255, 184, 77, 0.4);
+}
+
+[data-awsui-theme='dark'] .info-box--troubleshooting .info-box-icon {
+  color: #ffb84d;
+}
+
+[data-awsui-theme='dark'] .info-box--troubleshooting .info-box-icon svg {
+  fill: #ffb84d;
+}
+
+/* CONCEPT Alert 스타일 - 데모 가이드 전용 */
+.concept-box {
+  border: 2px solid #0972d3;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f0f7ff;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(9, 114, 211, 0.1);
+}
+
+.concept-box-header {
+  background-color: #0972d3;
+  color: white;
+  padding: 14px 18px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.concept-box-content {
+  padding: 20px 24px;
+  color: #0f1b2a;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* CONCEPT 내부 문단 간격 */
+.concept-box-content p {
+  margin: 0 0 12px 0;
+  line-height: 1.7;
+}
+
+.concept-box-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* CONCEPT 내부 리스트 스타일 */
+.concept-box-content ul,
+.concept-box-content ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.concept-box-content ul li,
+.concept-box-content ol li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+.concept-box-content ul li:last-child,
+.concept-box-content ol li:last-child {
+  margin-bottom: 0;
+}
+
+/* CONCEPT 내부 strong 스타일 */
+.concept-box-content strong {
+  font-weight: 600;
+  color: #0f1b2a;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme='dark'] .concept-box {
+  background-color: #1a2332;
+  border-color: #539fe5;
+}
+
+[data-awsui-theme='dark'] .concept-box-header {
+  background-color: #0972d3;
+}
+
+[data-awsui-theme='dark'] .concept-box-content {
+  color: #e9ebed;
+}
+
+[data-awsui-theme='dark'] .concept-box-content strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* CONCEPT Alert 내부 HTML 리스트 스타일 */
+.concept-html-list {
+  margin: 12px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.concept-html-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.concept-html-list li::before {
+  content: '•';
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+.concept-html-list li strong {
+  font-weight: 600;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme='dark'] .concept-html-list li::before {
+  color: #e9ebed;
+}
+
+/* OPTION Alert 스타일 - 옵션 선택 가이드 */
+.info-box--option {
+  background-color: rgba(245, 158, 11, 0.14);
+  /* 앰버/황금색 - 라이트 모드 더 진하게 */
+  border-color: rgba(245, 158, 11, 0.6);
+}
+
+.info-box--option .info-box-icon {
+  display: none;
+  /* 아이콘 숨김 */
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme='dark'] .info-box--option {
+  background-color: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.6);
+}
+
+/* Alert 내부 링크 스타일 - 앵커 링크와 동일하게 (모든 alert에 적용) */
+.info-box-content a {
+  color: #0972d3;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.info-box-content a:hover {
+  color: #0862c2;
+  border-bottom-color: #0972d3;
+}
+
+.info-box-content a:active {
+  color: #0651a8;
+}
+
+/* 다크모드 지원 */
+[data-awsui-theme='dark'] .info-box-content a {
+  color: #539fe5;
+}
+
+[data-awsui-theme='dark'] .info-box-content a:hover {
+  color: #7bb7ed;
+  border-bottom-color: #539fe5;
+}
+
+[data-awsui-theme='dark'] .info-box-content a:active {
+  color: #3d8fd9;
+}
+
+/* ============================================
+   ARCHITECTURE 다이어그램 박스 스타일
+   ============================================ */
+.architecture-box {
+  border: 2px solid #232f3e;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7f8f9 0%, #eceef1 100%);
+  margin: 24px 0;
+  box-shadow: 0 4px 16px rgba(35, 47, 62, 0.10);
+}
+
+.architecture-box-header {
+  background: linear-gradient(135deg, #232f3e 0%, #1a2332 100%);
+  color: white;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.02em;
+}
+
+.architecture-box-header svg {
+  flex-shrink: 0;
+}
+
+.architecture-box-header svg path {
+  fill: #ff9900;
+}
+
+.architecture-box-content {
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.architecture-box-content img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.architecture-box-content img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.architecture-box-content p {
+  margin: 8px 0 0 0;
+  font-size: 0.85rem;
+  color: #687078;
+}
+
+/* 다크모드 */
+[data-awsui-theme='dark'] .architecture-box {
+  background: linear-gradient(135deg, #1a2332 0%, #0f1b2a 100%);
+  border-color: #414d5c;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+[data-awsui-theme='dark'] .architecture-box-header {
+  background: linear-gradient(135deg, #232f3e 0%, #1a2332 100%);
+}
+
+[data-awsui-theme='dark'] .architecture-box-content p {
+  color: #8d9baa;
+}
+
+/* ============================================
+   이미지 확대 모달 (Zoom Overlay)
+   ============================================ */
+.image-zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  cursor: zoom-out;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.image-zoom-container {
+  position: relative;
+  max-width: 95vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+.image-zoom-img {
+  max-width: 95vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.image-zoom-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+  z-index: 10001;
+  transition: transform 0.2s ease;
+}
+
+.image-zoom-close:hover {
+  transform: scale(1.2);
+}
+
+.image-zoom-title {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 90vw;
+}
+
+/* 다크모드 (CloudScape) */
+[data-awsui-theme='dark'] .image-zoom-img {
+  background-color: #232f3e;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .image-zoom-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    padding: 12px;
+  }
+
+  .image-zoom-close {
+    top: -35px;
+    font-size: 28px;
+  }
+
+  .image-zoom-title {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}

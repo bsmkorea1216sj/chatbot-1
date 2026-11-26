@@ -1,0 +1,106 @@
+/* 접근성 개선 - 포커스 스타일 강화 */
+
+/* UserValue 컴포넌트 포커스 */
+.user-value-wrapper:focus-within {
+    outline: 2px solid #0972d3;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Alert 박스 포커스 */
+.info-box:focus-within {
+    outline: 2px solid #0972d3;
+    outline-offset: 2px;
+}
+
+/* 코드 블록 포커스 */
+.markdown-code-block:focus-within {
+    outline: 2px solid #0972d3;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* 파일 다운로드 항목 포커스 */
+.file-description-item:focus-within,
+.usage-task-item:focus-within {
+    outline: 2px solid #0972d3;
+    outline-offset: 2px;
+}
+
+/* 리스트 아이템 포커스 */
+.markdown-list-item:focus-within {
+    outline: 2px solid #0972d3;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* 버튼 포커스 강화 */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #0972d3;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* 다크모드 포커스 스타일 */
+[data-awsui-theme="dark"] .user-value-wrapper:focus-within,
+[data-awsui-theme="dark"] .info-box:focus-within,
+[data-awsui-theme="dark"] .markdown-code-block:focus-within,
+[data-awsui-theme="dark"] .file-description-item:focus-within,
+[data-awsui-theme="dark"] .usage-task-item:focus-within,
+[data-awsui-theme="dark"] .markdown-list-item:focus-within,
+[data-awsui-theme="dark"] button:focus-visible,
+[data-awsui-theme="dark"] a:focus-visible {
+    outline-color: #539fe5;
+}
+
+/* 스킵 링크 (키보드 네비게이션) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0972d3;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* 스크린 리더 전용 텍스트 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* 포커스 가능한 요소 강조 */
+[tabindex]:focus {
+    outline: 2px solid #0972d3;
+    outline-offset: 2px;
+}
+
+[data-awsui-theme="dark"] [tabindex]:focus {
+    outline-color: #539fe5;
+}
+
+/* 키보드 네비게이션 힌트 */
+.keyboard-hint {
+    font-size: 0.75rem;
+    color: #687078;
+    margin-top: 4px;
+}
+
+[data-awsui-theme="dark"] .keyboard-hint {
+    color: #9ba7b4;
+}

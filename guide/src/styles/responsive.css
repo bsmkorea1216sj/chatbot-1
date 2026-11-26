@@ -1,0 +1,423 @@
+/* 반응형 디자인 스타일 */
+
+/* 기본 브레이크포인트 */
+:root {
+    --breakpoint-xs: 320px;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1400px;
+}
+
+/* 컨테이너 스타일 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* 그리드 시스템 */
+.grid {
+    display: grid;
+    gap: 16px;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* 모바일 우선 반응형 */
+/* Extra Small devices (phones, 320px and up) */
+@media (min-width: 320px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .awsui-app-layout-navigation {
+        width: 100%;
+    }
+
+    .awsui-top-navigation {
+        padding: 8px 12px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .grid-sm-cols-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-sm-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-sm-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .awsui-app-layout-navigation {
+        width: 400px;
+    }
+
+    .grid-md-cols-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-md-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-md-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-md-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .grid-lg-cols-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-lg-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-lg-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-lg-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-lg-cols-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .grid-xl-cols-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-xl-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-xl-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-xl-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-xl-cols-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .grid-xl-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* 모바일 네비게이션 */
+@media (max-width: 767px) {
+    .awsui-app-layout-navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 400px;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .awsui-app-layout-navigation.open {
+        transform: translateX(0);
+    }
+
+    .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* 텍스트 크기 조정 */
+@media (max-width: 576px) {
+    .awsui-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .awsui-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .awsui-header h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* 모바일 실습 가이드 최적화 */
+@media (max-width: 768px) {
+
+    /* 코드 블록 최적화 */
+    .markdown-code-block {
+        font-size: 0.875rem;
+        /* 14px */
+        overflow-x: auto;
+    }
+
+    /* 리스트 번호 간격 조정 */
+    .markdown-content .markdown-ordered-list>li {
+        padding-left: 2rem;
+        /* 3rem → 2rem */
+    }
+
+    .markdown-content .markdown-ordered-list>li::before {
+        min-width: 1.5rem;
+        /* 2.5rem → 1.5rem */
+    }
+
+    /* Alert 박스 패딩 축소 */
+    .info-box {
+        padding: 12px 16px;
+        /* 18px 22px → 12px 16px */
+        gap: 10px;
+        /* 14px → 10px */
+    }
+
+    /* UserValue 컴포넌트 크기 조정 */
+    .user-value-code {
+        font-size: 0.875rem;
+        /* 1rem → 0.875rem */
+        padding: 3px 6px;
+        /* 4px 8px → 3px 6px */
+    }
+
+    .user-value-copy-button {
+        padding: 3px 5px;
+        /* 4px 6px → 3px 5px */
+        min-width: 28px;
+        /* 32px → 28px */
+        min-height: 28px;
+        /* 32px → 28px */
+    }
+
+    /* 파일 다운로드 카드 최적화 */
+    .file-description-item,
+    .usage-task-item {
+        padding: 10px 12px 10px 36px;
+        /* 14px 16px 14px 44px → 축소 */
+    }
+
+    .file-description-item::before,
+    .usage-task-item::before {
+        left: 12px;
+        /* 16px → 12px */
+        font-size: 1rem;
+        /* 1.125rem → 1rem */
+    }
+}
+
+/* 카드 레이아웃 반응형 */
+.card-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 테이블 반응형 */
+@media (max-width: 768px) {
+    .awsui-table {
+        font-size: 0.875rem;
+        /* 14px */
+    }
+
+    .awsui-table th,
+    .awsui-table td {
+        padding: 8px 4px;
+    }
+}
+
+/* 버튼 그룹 반응형 */
+.button-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group .awsui-button {
+        width: 100%;
+    }
+}
+
+/* 유틸리티 클래스 */
+.hidden-xs {
+    display: none;
+}
+
+.hidden-sm {
+    display: none;
+}
+
+.hidden-md {
+    display: none;
+}
+
+.hidden-lg {
+    display: none;
+}
+
+.hidden-xl {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .hidden-xs {
+        display: block;
+    }
+
+    .visible-xs {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .hidden-sm {
+        display: block;
+    }
+
+    .visible-sm {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .hidden-md {
+        display: block;
+    }
+
+    .visible-md {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hidden-lg {
+        display: block;
+    }
+
+    .visible-lg {
+        display: none;
+    }
+}
+
+@media (min-width: 1400px) {
+    .hidden-xl {
+        display: block;
+    }
+
+    .visible-xl {
+        display: none;
+    }
+}
+
+/* 스크롤 개선 */
+.scroll-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 터치 디바이스 최적화 */
+@media (hover: none) and (pointer: coarse) {
+
+    .awsui-button,
+    .awsui-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}

@@ -1,0 +1,126 @@
+/* LabStep 컴포넌트 스타일 */
+
+/* 단계 지침 리스트 */
+.lab-step-instructions-list {
+    margin: 0;
+    padding-left: 2rem;
+    font-size: 1.0625rem;
+    list-style-position: outside;
+}
+
+.lab-step-instructions-list li {
+    padding-left: 0.5rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+}
+
+.lab-step-instructions-list li::marker {
+    font-size: 1.0625rem;
+}
+
+/* 리스트 아이템 내부의 모든 요소를 텍스트 흐름에 맞춤 */
+.lab-step-instructions-list li>* {
+    line-height: 1.75;
+}
+
+.lab-step-instructions-list li strong,
+.lab-step-instructions-list li b {
+    font-weight: 600;
+    vertical-align: baseline;
+}
+
+/* 인라인 요소들의 정렬 통일 */
+.lab-step-instructions-list li .user-value-wrapper,
+.lab-step-instructions-list li .markdown-button-wrapper,
+.lab-step-instructions-list li .aws-button-orange,
+.lab-step-instructions-list li code {
+    vertical-align: baseline !important;
+}
+
+.lab-step-instruction {
+    margin-bottom: 1.25rem;
+    font-size: 1.0625rem;
+    color: var(--color-text-body-default);
+    line-height: 1.75;
+}
+
+/* 문제 해결 솔루션 */
+.troubleshooting-solution {
+    margin-top: 8px;
+}
+
+/* 예상 결과 박스 */
+.lab-step-result {
+    background-color: #f0f9ff;
+    border: 2px solid #0ea5e9;
+    border-left: 4px solid #0ea5e9;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.lab-step-result-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0ea5e9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lab-step-result-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.lab-step-result-content {
+    font-size: 1rem;
+    color: #374151;
+    background-color: #e0f2fe;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #bae6fd;
+    line-height: 1.6;
+}
+
+.lab-step-result-tip {
+    font-size: 1rem;
+    color: #6b7280;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 12px;
+    font-style: italic;
+}
+
+/* ============================================
+   다크모드 지원
+   ============================================ */
+
+[data-awsui-theme="dark"] .lab-step-instruction {
+    color: var(--color-text-body-default);
+}
+
+[data-awsui-theme="dark"] .lab-step-result {
+    background-color: #0c2d48;
+    border-color: #0ea5e9;
+}
+
+[data-awsui-theme="dark"] .lab-step-result-title {
+    color: #38bdf8;
+}
+
+[data-awsui-theme="dark"] .lab-step-result-subtitle {
+    color: #e9ebed;
+}
+
+[data-awsui-theme="dark"] .lab-step-result-content {
+    color: #d1d5db;
+    background-color: #145374;
+    border-color: #0c4a6e;
+}
+
+[data-awsui-theme="dark"] .lab-step-result-tip {
+    color: #9ca3af;
+    border-top-color: #374151;
+}
