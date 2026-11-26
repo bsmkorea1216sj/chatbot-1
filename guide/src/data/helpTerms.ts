@@ -14,7 +14,7 @@ export const labTerms: Term[] = [
     { term: 'Claude Chat', definition: '웹 브라우저(claude.ai)나 앱에서 대화로 사용하는 Claude입니다. 글쓰기·요약·분석·Artifacts 제작에 씁니다.', category: 'Claude 기능', weeks: ['1', '2', '3', '4'] },
     { term: 'Projects', definition: '기준 문서(지식)와 고정 지침(Instructions)을 저장해 두는 전용 작업 공간입니다. 매번 설명하지 않아도 같은 규칙으로 결과를 만들어 줍니다.\n\n• 지식 - 보고서 양식, 매뉴얼 등 참고 문서\n• 지침 - 항상 지킬 말투·형식·규칙', category: 'Claude 기능', weeks: ['3'] },
     { term: 'Artifacts', definition: '대화창 오른쪽에 결과물(웹앱, 문서, 차트 등)을 바로 실행해 보여 주는 창입니다. 미리보기·코드 보기·링크 공유가 가능합니다.', category: 'Claude 기능', weeks: ['4'] },
-    { term: 'Claude Code', definition: '터미널이나 VS Code에서 자연어로 지시하면 내 컴퓨터의 파일을 직접 만들고 고치는 AI 코딩 에이전트입니다. 유료(Pro 이상) 또는 API 키가 필요합니다.', category: 'Claude 기능', weeks: ['5', '6', '7', '8'] },
+    { term: 'Claude Code', definition: '자연어로 지시하면 내 컴퓨터의 파일을 직접 만들고 고치는 AI 코딩 에이전트입니다. 이 워크숍에서는 Claude 데스크톱 앱의 Code 탭으로 씁니다. 유료(Pro 이상)가 필요합니다.', category: 'Claude 기능', weeks: ['5', '6', '7', '8'] },
     { term: 'Sonnet / Haiku / Opus', definition: 'Claude의 모델 등급입니다. 일상 업무는 Sonnet을 기본으로 쓰고, 빠른 간단 작업은 Haiku, 어렵고 긴 작업은 Opus(유료)를 씁니다.', category: 'Claude 기능', weeks: ['1'] },
 
     // AI 기초
@@ -32,8 +32,7 @@ export const labTerms: Term[] = [
     { term: 'NaN', definition: 'Not a Number. 0을 0으로 나누는 것처럼 숫자로 계산할 수 없을 때 JavaScript가 내놓는 값입니다.', category: '웹 기초', weeks: ['7'] },
 
     // 개발 도구
-    { term: 'VS Code', definition: 'Visual Studio Code. 무료 코드 편집기로, 터미널과 Claude Code를 함께 쓸 수 있습니다.', category: '개발 도구', weeks: ['5'] },
-    { term: 'Node.js / npm', definition: 'Node.js는 JavaScript 실행 환경, npm(Node Package Manager)은 프로그램 설치 도구입니다. Claude Code 설치에 필요합니다.', category: '개발 도구', weeks: ['5'] },
-    { term: '터미널', definition: '글자로 명령을 입력해 컴퓨터를 다루는 창입니다. VS Code에서는 Ctrl + ` 로 엽니다.', category: '개발 도구', weeks: ['5'] },
-    { term: 'API 키', definition: '프로그램이 Claude를 쓸 수 있게 해 주는 비밀 열쇠입니다. 다른 사람에게 보여 주거나 코드에 넣지 마세요.', category: '개발 도구', weeks: ['5'] },
+    { term: 'Claude 데스크톱 앱', definition: 'Windows·Mac용 Claude 앱입니다. Chat과 Code 탭이 함께 있어, VS Code나 터미널 없이 Claude Code를 쓸 수 있습니다.', category: '개발 도구', weeks: ['5'] },
+    { term: '작업 폴더', definition: 'Code 탭에서 Claude가 파일을 만들고 고칠 수 있도록 고른 폴더입니다. 실습마다 새 폴더를 만들어 고르면 다른 파일을 건드리지 않습니다.', category: '개발 도구', weeks: ['5', '6', '7'] },
+    { term: '권한 허용', definition: 'Claude Code가 파일을 만들거나 고치기 전에 묻는 확인 창입니다. 무엇을 바꾸는지 읽고 허용합니다.', category: '개발 도구', weeks: ['5', '6', '7'] },
 ]
