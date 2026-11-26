@@ -1,5 +1,7 @@
 # 💬 Chatbot template
 
+> 📚 **Claude AI 워크숍 실습 자료실 → [workshop/](workshop/)**
+
 A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://chatbot-template.streamlit.app/)

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매출·이익률 계산기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>매출·이익률 계산기</h1>
+    <label for="revenue">매출액 (원)</label>
+    <input id="revenue" type="number" placeholder="예: 10000000">
+    <label for="cost">총 비용 (원)</label>
+    <input id="cost" type="number" placeholder="예: 6500000">
+    <div class="buttons">
+      <button id="calc" class="primary">계산하기</button>
+      <button id="reset">초기화</button>
+    </div>
+    <p id="result" class="result">값을 입력하고 계산하기를 눌러 주세요.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
